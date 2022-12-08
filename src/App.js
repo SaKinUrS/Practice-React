@@ -2,6 +2,13 @@ import Card from "./components/Card";
 import Cart from "./components/Cart";
 import Header from "./components/Header";
 
+const arrSneakers = [
+	{ name: 'Мужские Кроссовки Nike Blazer Mid Suede', price: 12999, img: 'img/sneakers/03.png' },
+	{ name: 'Мужские Кроссовки Nike Air Max 270', price: 8499, img: '/img/sneakers/02.png' },
+	{ name: 'Мужские Кроссовки Under Armour Curry 8', price: 18499, img: '/img/sneakers/06.png' },
+	{ name: 'Мужские Кроссовки Nike Kyrie 7', price: 45000, img: '/img/sneakers/04.png' },
+]
+
 function App() {
 	return (
 		<div className="wrapper">
@@ -19,14 +26,10 @@ function App() {
 						</div>
 					</div>
 					<div className="catalog__body">
-						<Card />
-						<Card />
-						<Card />
-						<Card />
-						<Card />
-						<Card />
-						<Card />
-						<Card />
+						{arrSneakers.map(sneaker => (
+							<Card title={sneaker.name} price={sneaker.price} img={sneaker.img} />
+
+						))}
 
 					</div>
 				</div>
